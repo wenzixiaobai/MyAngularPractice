@@ -1,0 +1,10 @@
+.full-width{
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+}
+
+.double-width{
+    width:400px;
+    height: 100%;
+}

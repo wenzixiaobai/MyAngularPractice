@@ -1,0 +1,8 @@
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+.table-responsive .table
+{
+    overflow-y: hidden
+}

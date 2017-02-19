@@ -1,0 +1,30 @@
+table {
+    border-collapse: collapse;
+    font-size: 18px;
+}
+table#main {
+    border-top: 1px solid #DFDFDF;
+    width:100%;
+    display: block;
+    background: white;
+}
+table#main .first {
+    width:150px;
+    white-space: nowrap;
+}
+table#main .rest {
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: white;
+    width: 250px;
+    border: 1px solid black;
+}
+
+table#main .rest tr td {
+    border: 1px solid black;
+}
+
+table td.first, table .rest td {
+    vertical-align: middle;
+    text-align: left;
+}
