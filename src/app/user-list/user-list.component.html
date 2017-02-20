@@ -1,23 +1,54 @@
-<div id="table-wrapper" style="">
-  <table border="1">
-    <thead>
-      <tr>
-        <th pos>Summary</th>
-        <th>Heading1</th>
-        <th>Heading2</th>
-        <th>Heading3</th>
-        <th>Heading4</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>03 Feb<br>AM</td>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-        <td>15</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="tablecontainer">
+    <div>
+        <div class="colname cellwidth1">
+            <h2 class="header">Bail</h2>
+        </div>
+        <div class="colname cellwidth2">
+            <h2 class="header">Cow#</h2>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="expandtable" [ngStyle]="{'height.px': bodyHeight}">
+        <div class="divrow detail" *ngFor="let c2b of milking.allocations; let index=index;">
+            <div class="divcell cellwidth1">
+                <h3 class="bail" [ngClass]="{positionLeft: watchingPosition == index}">{{c2b.bail}}</h3>
+            </div>
+            <div class="divcell cellwidth2">
+                <h3 class="bail" [ngClass]="{positionRight: watchingPosition == index}">{{c2b.animal}}&nbsp;</h3>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="table-wrapper" >
+    <table>
+        <thead>
+            <tr>
+                <th class="panel-heading summary-head" [ngStyle]="{'height.px': summaryTh, 'width.px':summaryThWidth }">
+                    <div class="div-summary" [ngStyle]="{'height.px': summaryDiv, 'padding-top.px':padding }">Summary</div>
+                </th>
+                <th class="panel panel-heading summary-hidden">
+                    <div class="div-summary-hidden"></div>
+                </th>
+                <th *ngFor="let c2b of milking.ctbStats" class="panel panel-heading">
+                    {{c2b.title}}
+                </th>
+                <th *ngFor="let c2b of milking.draftStats" class="panel panel-heading">
+                    {{c2b.title}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="panel-body" >{{milking.session}}</td>
+                <td class="panel panel-body summary-content"></td>
+                <td *ngFor="let c2b of milking.ctbStats" class="panel panel-body">
+                    {{c2b.value}}
+                </td>
+                <td *ngFor="let c2b of milking.draftStats" class="panel panel-body">
+                    {{c2b.value}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

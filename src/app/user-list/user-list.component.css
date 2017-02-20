@@ -1,28 +1,250 @@
-#table-wrapper {
-  width: 100%;
-  float: left;
-  overflow-x: auto;
-  position:fixed; 
-  bottom:0px;
+.seen {
+	font-size: 14px;
+	line-height: 26px;
 }
 
-table {
-  background: #fff;
-  overflow: hidden;
-  position: relative;
+.bail-indicator .fa {
+	margin: 0 5px;
 }
 
-table thead tr th {
-  /*width: 15em;*/
+.focused {
+	width: 180px;
+	background-color: #009cde;
+	padding: 5px 0 9px 0;
+	margin: 20px 0;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
 }
 
-table thead tr th:first-child,
-table tbody tr td:first-child {
-  position: fixed;
-  width:5em;
+.focused-around {
+	width: 180px;
+	background-color: #C8DBF1;
+	padding: 5px 0 9px 0;
+	margin: 20px 0;
 }
 
-table thead tr th:nth-child(2),
-table tbody tr td:nth-child(2) {
-  padding-left: 6em;
+.focused h3, .focused h4 {
+	color: #fff;
 }
+
+tr.detail {
+	border-top: 1px solid #C8DBF1;
+}
+
+.details tr:last-of-type.detail {
+	border-bottom: 1px solid #C8DBF1;
+}
+
+.header {
+	/*font-size: 36px;*/
+	padding-left: 5px;
+}
+
+.bail {
+	padding-left: 10px;
+	color: #000;
+	font-size: 34px;
+	margin-top: 10px;
+}
+
+.details .position {
+	border: 2px solid #001E62;
+}
+
+.positionLeft {
+	border: 2px solid #001E62;
+	border-right: none;
+	font-size: 48px;
+}
+
+.positionRight {
+	border: 2px solid #001E62;
+	border-left: none;
+	font-size: 48px;
+}
+
+.bail-indicator {
+	display: inline-block;
+}
+
+.bail-number {
+	background-color: #009cde;
+	font-size: 30px;
+	color: #fff;
+
+	width: 50px;
+	height: 79px;
+	border-radius: 10px 0 0 10px;
+	padding: 13px 0 9px 0;
+	
+}
+
+.bail-animal {
+	background-color: #009cde;
+	font-size: 20px;
+	color: #fff;
+	width: 80px;
+	height: 79px;
+	border-radius: 0 10px 10px 0;
+	border-left:1px solid #fff;
+	padding: 13px 0 9px 0;
+	margin: 0;
+}
+
+path {
+  fill-rule: evenodd;
+  stroke: #333;
+  stroke-width: 2px;
+}
+
+.sun path {
+  fill: #6baed6;
+}
+
+.planet path {
+  fill: #9ecae1;
+}
+
+.annulus path {
+  fill: #c6dbef;
+}
+
+.annulus-i circle {
+	fill: #fff;
+	stroke: #333;
+}
+
+.annulus-o circle {
+	fill: #c6dbef;
+	stroke: #333;
+}
+
+.annulus-f path {
+	fill: #001E62;
+	stroke: #fff;
+}
+
+.annulus-f text {
+	fill: #fff;
+}
+
+.annulus-a path {
+	fill: #009cde;
+	stroke: #fff;
+}
+
+.svg-container { 
+	display: block;
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	vertical-align: middle; /* top | middle | bottom ... do what you want */
+	    overflow: hidden;
+}
+
+.svg-content { 
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+@media screen and (max-width: 30em){
+	.svg-container { 
+		width: 80%;
+		padding-bottom: 50%;
+	}
+}
+
+@media all and (min-width: 768px) {
+	
+}
+
+@media all and (min-width: 1200px) {
+	.focused-around {
+		border-left: 1px solid #fff;
+		border-right: 1px solid #fff;
+	}
+}
+
+.table-wrapper { 
+   width: 97%; 
+   float: left; 
+   overflow-x: auto; 
+   position:fixed;  
+   bottom:0px; 
+   margin-right: 2px;
+   padding-bottom: 10px;
+   -webkit-overflow-scrolling: touch;
+ } 
+ 
+ .table-wrapper table
+ {
+	 width:100%;
+ }
+
+ .table-wrapper thead tr th:first-child, 
+ .table-wrapper tbody tr td:first-child { 
+   position: fixed; 
+   border-bottom: none;
+   display: table-cell;
+   vertical-align: middle;
+ }
+
+.table-wrapper thead tr:first-child th{ 
+
+ } 
+
+.table-wrapper thead tr th:nth-child(2), 
+.table-wrapper tbody tr td:nth-child(2) { 
+   width:110px;
+ } 
+
+ .table-wrapper thead tr th,
+ .table-wrapper tbody tr td
+ {
+	 font-size: 20px;
+	 text-align:center;
+	 border-top-color:rgb(221, 221, 221);
+	 border-bottom-color:rgb(221, 221, 221);
+ }
+
+	.expandtable, .tablecontainer 
+	{
+		margin: 0;
+		padding: 0;
+		border: none;
+		overflow-y: hidden;
+	}
+
+	.tablecontainer 
+	{
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.expandtable
+	{
+		margin: 5px 0 0 0px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+		border-bottom: 0;
+		margin: 0 auto;
+	}
+
+	.divcell { 
+		float:left; 
+		box-sizing: border-box; 
+		border-top: 1px solid #C8DBF1; }
+		
+	.colname { 
+		float:left; 
+		box-sizing: border-box; 
+		border-top: 1px solid #C8DBF1;
+	}
+
+	.cellwidth1 { width:30%; }
+
+	.cellwidth2 { width:70%; }
