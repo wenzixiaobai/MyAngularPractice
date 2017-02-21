@@ -1,54 +1,59 @@
-<div class="tablecontainer">
-    <div>
-        <div class="colname cellwidth1">
-            <h2 class="header">Bail</h2>
-        </div>
-        <div class="colname cellwidth2">
-            <h2 class="header">Cow#</h2>
-        </div>
-    </div>
-    <div class="clearfix"></div>
-    <div class="expandtable" [ngStyle]="{'height.px': bodyHeight}">
-        <div class="divrow detail" *ngFor="let c2b of milking.allocations; let index=index;">
-            <div class="divcell cellwidth1">
-                <h3 class="bail" [ngClass]="{positionLeft: watchingPosition == index}">{{c2b.bail}}</h3>
-            </div>
-            <div class="divcell cellwidth2">
-                <h3 class="bail" [ngClass]="{positionRight: watchingPosition == index}">{{c2b.animal}}&nbsp;</h3>
-            </div>
-        </div>
-    </div>
+<div *ngIf="isLoading">
+    Loading...
 </div>
 
-<div class="table-wrapper" >
-    <table>
-        <thead>
-            <tr>
-                <th class="panel-heading summary-head" [ngStyle]="{'height.px': summaryTh, 'width.px':summaryThWidth }">
-                    <div class="div-summary" [ngStyle]="{'height.px': summaryDiv, 'padding-top.px':padding }">Summary</div>
-                </th>
-                <th class="panel panel-heading summary-hidden">
-                    <div class="div-summary-hidden"></div>
-                </th>
-                <th *ngFor="let c2b of milking.ctbStats" class="panel panel-heading">
-                    {{c2b.title}}
-                </th>
-                <th *ngFor="let c2b of milking.draftStats" class="panel panel-heading">
-                    {{c2b.title}}
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="panel-body" >{{milking.session}}</td>
-                <td class="panel panel-body summary-content"></td>
-                <td *ngFor="let c2b of milking.ctbStats" class="panel panel-body">
-                    {{c2b.value}}
-                </td>
-                <td *ngFor="let c2b of milking.draftStats" class="panel panel-body">
-                    {{c2b.value}}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div *ngIf="!isLoading">
+    <div *ngIf="milking !== null">
+        <div style="width:100%;">
+            <div>
+                <div class="div-cell col-bail" id="ctb-detail-head">
+                    <h2 class="header">Bail</h2>
+                </div>
+                <div class="div-cell col-animal">
+                    <h2 class="header">Cow#</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="row ctb-detail" id="card-view-container">
+            <div class="detail" *ngFor="let c2b of milking.allocations; let index=index;">
+                <div class="div-cell col-bail">
+                    <h3 class="bail" [ngClass]="{positionLeft: watchingPosition == index}">{{c2b.bail}}</h3>
+                </div>
+                <div class="div-cell col-animal">
+                    <h3 class="bail" [ngClass]="{positionRight: watchingPosition == index}">{{c2b.animal}}&nbsp;</h3>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="ctb-footer table-responsive" id="ctb-summary-footer">
+            <table id="ctb-summary-footer-table" class="table">
+                <thead>
+                    <tr>
+                        <th class="ctb-fix-column" id="ctb-summary-fixhead">Summary</th>
+                        <th id="ctb-summary-hidhead">&nbsp;</th>
+                        <th *ngFor="let c2b of milking.ctbStats" style="vertical-align: middle">
+                            {{c2b.title}}
+                        </th>
+                        <th *ngFor="let c2b of milking.draftStats">
+                            {{c2b.title}}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ctb-fix-column" id="ctb-summary-fixvalue">{{milking.session}}</td>
+                        <td id="ctb-summary-hidvalue"></td>
+                        <td *ngFor="let c2b of milking.ctbStats">
+                            {{c2b.value}}
+                        </td>
+                        <td *ngFor="let c2b of milking.draftStats">
+                            {{c2b.value}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

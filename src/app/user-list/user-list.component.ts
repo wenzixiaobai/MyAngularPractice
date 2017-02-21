@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit, Directive, ElementRef, HostListener, Inject, Renderer, Input } from '@angular/core';
+import { Component, ViewEncapsulation, ElementRef, OnInit, OnDestroy, AfterViewInit, AfterContentChecked, NgZone } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { UserListLayout } from '../utils/userListLayout';
 
 export class MyMilking {
   public allocations: Allocation[] = [];
@@ -32,21 +33,22 @@ export class MilkingStatsItem {
   styleUrls: ['./user-list.component.css']
 })
 
-export class UserListComponent implements OnInit, AfterViewInit{
+export class UserListComponent implements OnInit, AfterViewInit, AfterContentChecked {
   bodyHeight: number = 750;
   summaryPadding: number = 0;
   summaryDiv: number = 0;
   summaryTh: number = 0;
   summaryThWidth: number = 0;
-contendHeight:number =0;
+  contendHeight: number = 0;
   milking: MyMilking = null;
   el: HTMLElement;
 
+  isLoading = true;
   constructor(private elementRef: ElementRef) {
     this.el = elementRef.nativeElement;
 
     let allocations = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
       let allocation = new Allocation('Cow' + i, i);
       allocations.push(allocation);
     }
@@ -61,12 +63,12 @@ contendHeight:number =0;
     this.milking.ctbStats = [];
     let item = new MilkingStatsItem();
     item.title = 'Cow Count';
-    item.value = 1;
+    item.value = 80000;
     this.milking.ctbStats.push(item);
 
     item = new MilkingStatsItem();
     item.title = 'Repeats';
-    item.value = 2;
+    item.value = 20000;
     this.milking.ctbStats.push(item);
 
     item = new MilkingStatsItem();
@@ -94,30 +96,25 @@ contendHeight:number =0;
   }
 
   ngOnInit() {
+    this.isLoading = false;
   }
 
-  ngAfterViewInit(){
-    this.Adjust();
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit');
+    this.onResize();
   }
 
-  @HostListener('scroll') scrolling() {
-    console.log('scrolling');
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked');
   }
 
-  @HostListener('onClick', ['$event'])
-  onClick($event: Event): void {
-    console.log($event.srcElement.scrollLeft, $event.srcElement.scrollTop);
-    // (event.srcElement.position
-    // this.thead.style.left = this.tbody.scrollLeft * -1 + 'px';
-    // for (let th of this.firstColumns) {
-    //     th.style.left = this.tbody.scrollLeft + 'px';
-    // }
+  onResize() {
+    this.resizeElements();
   }
 
-  @HostListener('window:resize', ['$event.target'])
-  onResizeSummary(event) {
-    //this.Adjust();
-    
+  resizeElements() {
+    let userListLayout = new UserListLayout();
+    userListLayout.reLayout();
   }
 
   private Adjust() {
@@ -130,7 +127,7 @@ contendHeight:number =0;
     let summayHidden = this.el.querySelector('th[class="panel panel-heading summary-hidden"]');
     this.summaryTh = <number><any>(window.getComputedStyle(summayHidden, null).getPropertyValue('height').replace('px', ''));
 
-  
+
     let summayDivEl = this.el.querySelector('div[class="div-summary"]');
     let summaryDivHeight = <number><any>(window.getComputedStyle(summayDivEl, null).getPropertyValue('height').replace('px', ''));
     let summayHiddenDiv = this.el.querySelector('div[class="div-summary-hidden"]');
