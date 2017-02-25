@@ -36,48 +36,16 @@ tr.detail {
     border-bottom: 1px solid #C8DBF1;
 }
 
+.header {
+    /*font-size: 36px;*/
+    padding-left: 5px;
+}
+
 .bail {
     padding-left: 10px;
     color: #000;
-    font-size: 21px;
-    margin: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.header {
-    padding-left: 10px;
-}
-
-.position {
-    /* border: 1px solid #001E62;*/
-    zoom: 125%;
-}
-
-.positionTop {
-    border-bottom: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    width: 100%;
-}
-
-.positionBottom {
-    border-top: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    width: 100%;
-}
-
-.positionLeft {
-    border-top: none !important;
-    border-bottom: none !important;
-    border-right: none !important;
-}
-
-.positionRight {
-    border-top: none !important;
-    border-bottom: none !important;
-    border-left: none !important;
+    font-size: 34px;
+    margin-top: 10px;
 }
 
 .bail-indicator {
@@ -153,7 +121,8 @@ path {
     position: relative;
     width: 80%;
     margin: 0 auto;
-    /* vertical-align: middle;  top | middle | bottom ... do what you want */
+    vertical-align: middle;
+    /* top | middle | bottom ... do what you want */
     overflow: hidden;
 }
 
@@ -183,41 +152,32 @@ path {
 
 .ctb-footer {
     width: 100%;
+    margin: -10;
+    padding: -15;
     background: white;
     vertical-align: middle;
     -webkit-overflow-scrolling: touch;
-    position: fixed;
-    bottom: 0px;
-    border: none;
-    left: 0px;
 }
 
-.ctb-footer table {
-    margin-bottom: 10px;
-    -webkit-overflow-scrolling: touch;
+
+/*
+.ctb-footer thead tr th:not(:first-child) ,
+.ctb-footer tbody tr td:not(:first-child)  {
+    border:none;
 }
+*/
 
 .ctb-footer thead tr th,
 .ctb-footer tbody tr td {
     font-size: 20px;
     text-align: center;
-    vertical-align: middle;
     border: none;
 }
 
-.ctb-footer thead tr {
-    border-top: 1px solid #C8DBF1;
-    border-bottom: none;
-    border-left: none;
-    border-bottom: none;
-    margin-right: 10px;
-}
-
+.ctb-footer thead tr,
 .ctb-footer tbody tr {
-    border-top: 1px solid #C8DBF1;
-    border-bottom: 1px solid #C8DBF1;
-    border-left: none;
-    border-right: none;
+    border-top: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(221, 221, 221);
 }
 
 .ctb-fix-column {
@@ -226,8 +186,6 @@ path {
     margin: 0;
     min-width: 120px;
     background: #fff;
-    border: none;
-    left: 0px;
 }
 
 .ctb-detail {
@@ -240,9 +198,9 @@ path {
     margin: 0 auto;
 }
 
-.div-cell-divider {
+.div-cell {
+    float: left;
     border-bottom: 1px solid #C8DBF1;
-    width: 100%;
 }
 
 .col-bail {
@@ -253,26 +211,8 @@ path {
     width: 70%;
 }
 
-.ctb-header {
-    display: block;
-    position: relative;
-}
-
-.ctb-detail {
-    display: block;
-    overflow-y: auto;
-    overflow-x: none;
+#ctb-summary-footer-table {
     width: 100%;
-}
-
-.watchPosition {
-    zoom: 125%;
-    border: 2px solid #C8DBF1 !important;
-}
-
-.flex-tr {
-    display: flex;
-    border-bottom: 1px solid #C8DBF1;
 }
 
 #card-view-container::-webkit-scrollbar {
@@ -293,7 +233,6 @@ path {
 #ctb-summary-footer-table {
     vertical-align: middle;
     border: none;
-    width: 100%;
 }
 
 #ctb-summary-hidhead {
@@ -304,21 +243,40 @@ path {
     padding-top: 8px;
 }
 
-.fixed_headers {
+.divider {
+    float: left;
     width: 100%;
-    /*table-layout: fixed;*/
+    border-bottom: 1px solid #9ecae1;
 }
 
-.fixed_header {
-    display: block;
-    position: relative;
-    display: flex;
+.position {
+    border: 2px solid #001E62;
 }
 
-@media screen and (min-device-width: 768px) {
-    #card-view-container::-webkit-scrollbar-thumb,
-    #details-view-container::-webkit-scrollbar-thumb {
-        background-color: #001e62;
-        -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.10), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
-    }
+.positionTop {
+    border-left: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    float: left;
+    width: 100%;
+}
+
+.positionLeft {
+    border-top: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+}
+
+.positionBottom {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    float: left;
+    width: 100%;
+}
+
+.positionRight {
+    border-top: none !important;
+    border-left: none !important;
+    border-bottom: none !important;
 }

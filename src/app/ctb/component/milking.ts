@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation, OnInit, OnDestroy, AfterViewInit, AfterViewChecked , NgZone } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, OnDestroy, AfterViewInit, AfterContentChecked, NgZone } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { UserListLayout } from '../utils/userListLayout';
+import { UserListLayout } from '../../utils/userListLayout';
+
 
 export class MyMilking {
   public allocations: Allocation[] = [];
@@ -28,12 +29,12 @@ export class MilkingStatsItem {
 }
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-ctb-milking',
+  templateUrl: './milking.template.html',
+  styleUrls: ['./milking.css']
 })
 
-export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecked  {
+export class MilkingComponent  implements OnInit, AfterViewInit, AfterContentChecked {
   bodyHeight: number = 750;
   summaryPadding: number = 0;
   summaryDiv: number = 0;
@@ -41,13 +42,10 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
   summaryThWidth: number = 0;
   contendHeight: number = 0;
   milking: MyMilking = null;
-  watchingPosition: number = 2;
+  watchingPosition: number = 10;
   isLoading = true;
   private index: number;
-  private userListLayout: UserListLayout;
-
   constructor() {
-    this.userListLayout = new UserListLayout();
     this.ngGetHistory();
     this.ngCtbStats();
     this.ngDraftingStats();
@@ -59,7 +57,7 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
 
   private addNewItem() {
       let allocation = new Allocation('Cow_' + this.index, this.index);
-      this.milking.allocations.unshift(allocation);
+      //this.milking.allocations.unshift(allocation);
       this.index ++;
   }
 
@@ -119,12 +117,8 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
     //this.onResize();
   }
 
-  ngAfterViewChecked () {
-    
-    if(this.userListLayout.Resized === false){
-      this.resizeElements();
-      console.log('ngAfterContentChecked');
-    }
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked');
   }
 
   onResize() {
@@ -132,6 +126,7 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
   }
 
   resizeElements() {
-    this.userListLayout.reLayout();
+    let userListLayout = new UserListLayout();
+    userListLayout.reLayout();
   }
 }

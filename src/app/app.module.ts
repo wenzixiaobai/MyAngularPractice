@@ -7,18 +7,23 @@ import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserItemComponent } from './user-item/user-item.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { MilkingComponent } from './ctb/component/milking';
+import { CarouselModule } from 'ng2-bootstrap/carousel';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
     UserItemComponent,
-    UserListComponent
+    UserListComponent,
+    MilkingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,52 @@
+<div *ngIf="isLoading">
+    Loading...
+</div>
+
+<div *ngIf="!isLoading">
+    <div *ngIf="milking !== null">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c2b of milking.allocations; let index=index;" [ngClass]="{'ctbPosition': watchingPosition == index}">
+                    <td>Apple</td>
+                    <td>Red</td>
+                </tr>
+            </tbody>
+        </table>
+        <p></p>
+        <div class="ctb-footer table-responsive" id="ctb-summary-footer">
+            <table id="ctb-summary-footer-table" class="table">
+                <thead>
+                    <tr>
+                        <th class="ctb-fix-column" id="ctb-summary-fixhead">Summary</th>
+                        <th id="ctb-summary-hidhead">&nbsp;</th>
+                        <th *ngFor="let c2b of milking.ctbStats" style="vertical-align: middle">
+                            {{c2b.title}}
+                        </th>
+                        <th *ngFor="let c2b of milking.draftStats">
+                            {{c2b.title}}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ctb-fix-column" id="ctb-summary-fixvalue">{{milking.session}}</td>
+                        <td id="ctb-summary-hidvalue"></td>
+                        <td *ngFor="let c2b of milking.ctbStats">
+                            {{c2b.value}}
+                        </td>
+                        <td *ngFor="let c2b of milking.draftStats">
+                            {{c2b.value}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

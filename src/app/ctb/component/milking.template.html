@@ -1,0 +1,88 @@
+<div *ngIf="isLoading">
+    Loading...
+</div>
+<carousel>
+    <slide>
+        <div class="carousel-caption">
+            <h1>test1 </h1>
+        </div>
+        <div>
+            <h1>test1 </h1>
+        </div>
+    </slide>
+    <slide>
+        <div class="carousel-caption">
+            <h1>test2 </h1>
+        </div>
+        <div>
+            <h1>test2 </h1>
+        </div>
+    </slide>
+    <slide>
+        <div> class="carousel-caption"
+            <h1>test3 </h1>
+        </div>
+        <div>
+            <h1>test3 </h1>
+        </div>
+    </slide>
+</carousel>
+<div *ngIf="!isLoading">
+    <div *ngIf="milking !== null">
+        <div style="width:100%;" (window:resize)="onResize()">
+            <div>
+                <div class="fa fa-pull-left col-bail" id="ctb-detail-head">
+                    <h2 class="header">Bail</h2>
+                </div>
+                <div class="fa fa-pull-left col-animal">
+                    <h2 class="header">Cow#</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="row ctb-detail" id="card-view-container">
+            <div class="div-cell-divider"></div>
+            <div *ngFor="let c2b of milking.allocations; let index=index;" [ngClass]="{position: watchingPosition == (index+1)}">
+                <div style="display: inline-flex;">
+                    <div style="width: 30%;" *ngIf="(watchingPosition != (index+1))">
+                        <h3 class="bail">{{c2b.bail}}</h3>
+                    </div>
+                    <div style="width: 70%;" class="fa fa-pull-left col-animal" *ngIf="(watchingPosition != (index+1))">
+                        <h3 class="bail">{{c2b.animal}}&nbsp;</h3>
+                    </div>
+                </div>
+                <div style="width:100%; border-bottom: 1px solid black; float:left;"></div>
+            </div>
+        </div>
+        <div class="ctb-footer table-responsive" id="ctb-summary-footer">
+            <table id="ctb-summary-footer-table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="ctb-fix-column" id="ctb-summary-fixhead">Summary</th>
+                        <th id="ctb-summary-hidhead" nowrap>&nbsp;</th>
+                        <th *ngFor="let c2b of milking.ctbStats">
+                            {{c2b.title}}
+                        </th>
+                        <th *ngFor="let c2b of milking.draftStats">
+                            {{c2b.title}}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ctb-fix-column" id="ctb-summary-fixvalue">{{milking.session}}</td>
+                        <td id="ctb-summary-hidvalue"></td>
+                        <td *ngFor="let c2b of milking.ctbStats">
+                            {{c2b.value}}
+                        </td>
+                        <td *ngFor="let c2b of milking.draftStats">
+                            {{c2b.value}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

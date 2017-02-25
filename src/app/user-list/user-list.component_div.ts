@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit, OnDestroy, AfterViewInit, AfterViewChecked , NgZone } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, OnDestroy, AfterViewInit, AfterContentChecked, NgZone } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UserListLayout } from '../utils/userListLayout';
 
@@ -33,7 +33,7 @@ export class MilkingStatsItem {
   styleUrls: ['./user-list.component.css']
 })
 
-export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecked  {
+export class UserListComponent implements OnInit, AfterViewInit, AfterContentChecked {
   bodyHeight: number = 750;
   summaryPadding: number = 0;
   summaryDiv: number = 0;
@@ -44,10 +44,7 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
   watchingPosition: number = 2;
   isLoading = true;
   private index: number;
-  private userListLayout: UserListLayout;
-
   constructor() {
-    this.userListLayout = new UserListLayout();
     this.ngGetHistory();
     this.ngCtbStats();
     this.ngDraftingStats();
@@ -101,7 +98,7 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
 
   private ngGetHistory() {
     let allocations = [];
-    for (let i = 0; i < 2000; i++) {
+    for (let i = 0; i < 1; i++) {
       let allocation = new Allocation('Cow' + i, i);
       allocations.push(allocation);
     }
@@ -116,15 +113,11 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
 
   ngAfterViewInit() {
     console.log('ngAfterViewInit');
-    //this.onResize();
+    this.onResize();
   }
 
-  ngAfterViewChecked () {
-    
-    if(this.userListLayout.Resized === false){
-      this.resizeElements();
-      console.log('ngAfterContentChecked');
-    }
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked');
   }
 
   onResize() {
@@ -132,6 +125,7 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
   }
 
   resizeElements() {
-    this.userListLayout.reLayout();
+    let userListLayout = new UserListLayout();
+    userListLayout.reLayout();
   }
 }

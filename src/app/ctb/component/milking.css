@@ -253,27 +253,7 @@ path {
     width: 70%;
 }
 
-.ctb-header {
-    display: block;
-    position: relative;
-}
-
-.ctb-detail {
-    display: block;
-    overflow-y: auto;
-    overflow-x: none;
-    width: 100%;
-}
-
-.watchPosition {
-    zoom: 125%;
-    border: 2px solid #C8DBF1 !important;
-}
-
-.flex-tr {
-    display: flex;
-    border-bottom: 1px solid #C8DBF1;
-}
+#card-view-container {}
 
 #card-view-container::-webkit-scrollbar {
     width: 20px;
@@ -302,23 +282,4 @@ path {
 
 #ctb-summary-fixvalue {
     padding-top: 8px;
-}
-
-.fixed_headers {
-    width: 100%;
-    /*table-layout: fixed;*/
-}
-
-.fixed_header {
-    display: block;
-    position: relative;
-    display: flex;
-}
-
-@media screen and (min-device-width: 768px) {
-    #card-view-container::-webkit-scrollbar-thumb,
-    #details-view-container::-webkit-scrollbar-thumb {
-        background-color: #001e62;
-        -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.10), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
-    }
 }
