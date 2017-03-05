@@ -1,56 +1,133 @@
-<div *ngIf="!isLoading">
-    <div *ngIf="milking !== null">
-        <div>
-            <table class="fixed_headers" (window:resize)="onResize()">
-                <thead class="ctb-header">
-                    <tr class="flex-tr">
-                        <th class="col-bail">
-                            <h2 class="header">Bail</h2>
-                        </th>
-                        <th class="col-animal">
-                            <h2 class="header">Cow#</h2>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody class="ctb-detail" id="card-view-container">
-                    <tr class="flex-tr" *ngFor="let c2b of milking.allocations; let index=index;" [ngClass]="{watchPosition: watchingPosition == (index+1)}">
-                        <td style="width:30%;">
-                            <h3 class="bail">{{c2b.bail}}</h3>
-                        </td>
-                        <td style="width:70%;">
-                            <h3 class="bail">{{c2b.animal}}</h3>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+<div id="global-market-container" ng-reflect-ng-class="branding-nz" class="branding-nz">
+    <div>
+        <div id="globally-fixed">
+
+            <div id="api-env" ng-reflect-class-name="acceptance" class="acceptance"></div>
+
+            <div id="global-header">
+                <div id="global-header-icon">
+                    <img height="35" src="assets/navigation/white-lica-logo.png" width="70">
+
+
+                </div>
+
+
+                <div id="global-header-nav-items">
+                    <div class="global-header-item-messages global-header-item-expaned" id="global-header-item" ng-reflect-klass="global-header-item-messages" ng-reflect-ng-class="[object Object]">
+
+                        <img height="32" src="assets/navigation/bell.svg" width="32">
+                        <div>Messages</div>
+
+                        <div class="circle">
+                            <div class="alert-count">5</div>
+                        </div>
+                    </div>
+
+                    <div id="global-header-item" ng-reflect-ng-class="[object Object]" class="global-header-item-expaned">
+
+                        <img height="32" width="32" ng-reflect-src="assets/navigation/cow.svg" src="assets/navigation/cow.svg">
+                        <div>Animals</div>
+                    </div>
+                    <div id="global-header-item" ng-reflect-ng-class="[object Object]" class="global-header-item-expaned">
+
+                        <img height="32" width="32" ng-reflect-src="assets/sensors/milk.svg" src="assets/sensors/milk.svg">
+                        <div>Milking</div>
+                    </div>
+                    <div id="global-header-item" ng-reflect-ng-class="[object Object]" class="global-header-item-expaned">
+
+                        <img height="32" width="32" ng-reflect-src="assets/drafting/drafting.svg" src="assets/drafting/drafting.svg">
+                        <div>Drafting</div>
+                    </div>
+                    <div id="global-header-item" ng-reflect-ng-class="[object Object]" class="selected global-header-item-expaned">
+
+                        <img height="32" width="32" ng-reflect-src="assets/cow2bail/rotary.svg" src="assets/cow2bail/rotary.svg">
+
+
+                        <div>Cow2Bail</div>
+                    </div>
+                    <div id="global-header-item" ng-reflect-ng-class="[object Object]" class="global-header-item-expaned">
+
+                        <img height="32" width="32" ng-reflect-src="assets/navigation/reports.svg" src="assets/navigation/reports.svg">
+                        <div>Reports</div>
+                    </div>
+                    <div id="global-header-item" ng-reflect-ng-class="[object Object]" class="global-header-item-expaned">
+
+                        <img height="32" width="32" ng-reflect-src="assets/cow2bail/rotary.svg" src="assets/cow2bail/rotary.svg">
+                        <div>CTB HB</div>
+                    </div>
+                    <div id="global-header-item" ng-reflect-ng-class="[object Object]" class="global-header-item-expaned">
+                        <img height="32" width="32" ng-reflect-src="assets/navigation/settings.svg" src="assets/navigation/settings.svg">
+                        <div>Settings</div>
+                    </div>
+                </div>
+                <div id="global-header-hamburger" ng-reflect-ng-class="[object Object]" ng-reflect-hidden="true" hidden="">
+                    <div>
+                        <img height="32" src="assets/navigation/bars.svg" width="32">
+                        <div style="font-size: 14px">More</div>
+                    </div>
+                </div>
+            </div>
+            <div id="global-header-underline"></div>
         </div>
-        <div class="ctb-footer table-responsive" id="ctb-summary-footer">
-            <table id="ctb-summary-footer-table" class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th class="ctb-fix-column" id="ctb-summary-fixhead">Summary</th>
-                        <th id="ctb-summary-hidhead" nowrap>&nbsp;</th>
-                        <th *ngFor="let c2b of milking.ctbStats">
-                            {{c2b.title}}
-                        </th>
-                        <th *ngFor="let c2b of milking.draftStats">
-                            {{c2b.title}}
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="ctb-fix-column" id="ctb-summary-fixvalue">{{milking.session}}</td>
-                        <td id="ctb-summary-hidvalue"></td>
-                        <td *ngFor="let c2b of milking.ctbStats">
-                            {{c2b.value}}
-                        </td>
-                        <td *ngFor="let c2b of milking.draftStats">
-                            {{c2b.value}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <div id="global-header-padding"></div>
+    </div>
+    <div id="main-container">
+        <div *ngIf="!isLoading">
+            <div *ngIf="milking !== null">
+                <div>
+                    <table class="fixed_headers" (window:resize)="onResize()">
+                        <thead class="ctb-header">
+                            <tr class="flex-tr">
+                                <th class="col-bail">
+                                    <h2 class="header">Bail</h2>
+                                </th>
+                                <th class="col-animal">
+                                    <h2 class="header">Cow#</h2>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="ctb-detail" id="card-view-container">
+                            <tr class="flex-tr" *ngFor="let c2b of milking.allocations; let index=index;" [ngClass]="{watchPosition: watchingPosition == (index+1)}">
+                                <td style="width:30%;">
+                                    <h3 class="bail">{{c2b.bail}}</h3>
+                                </td>
+                                <td style="width:70%;">
+                                    <h3 class="bail">{{c2b.animal}}</h3>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="ctb-footer table-responsive" id="ctb-summary-footer">
+                    <table id="ctb-summary-footer-table" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="ctb-fix-column" id="ctb-summary-fixhead">Summary</th>
+                                <th id="ctb-summary-hidhead" nowrap>&nbsp;</th>
+                                <th *ngFor="let c2b of milking.ctbStats">
+                                    {{c2b.title}}
+                                </th>
+                                <th *ngFor="let c2b of milking.draftStats">
+                                    {{c2b.title}}
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ctb-fix-column" id="ctb-summary-fixvalue">{{milking.session}}</td>
+                                <td id="ctb-summary-hidvalue"></td>
+                                <td *ngFor="let c2b of milking.ctbStats">
+                                    {{c2b.value}}
+                                </td>
+                                <td *ngFor="let c2b of milking.draftStats">
+                                    {{c2b.value}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

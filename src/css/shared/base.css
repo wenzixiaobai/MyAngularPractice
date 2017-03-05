@@ -1,0 +1,141 @@
+﻿.BoosterNextFY-Thin {
+	font-family: BoosterNextFY-Thin;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.BoosterNextFY-Regular {
+	font-family: BoosterNextFY-Regular;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.BoosterNextFY-Medium {
+	font-family: BoosterNextFY-Medium;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.BoosterNextFY-Black {
+	font-family: BoosterNextFY-Black;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.BoosterNextFY-Light {
+	font-family: BoosterNextFY-Light;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.BoosterNextFY-Bold {
+	font-family: BoosterNextFY-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* These all need to moved to the less file post-alpha. */
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 21px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+/* Common button hight: 42 pixel */
+.btn-lg, .btn-group-lg > .btn {
+	padding: 8px 16px;
+}
+
+.top-spacer-lg {
+	margin-top: 40px;
+}
+
+.top-spacer {
+	margin-top: 25px;
+}
+
+.top-spacer-sm {
+	margin-top: 15px;
+}
+
+.top-spacer-xs {
+	margin-top: 5px;
+}
+
+.left-spacer-lg {
+	margin-left: 40px;
+}
+
+.left-spacer {
+	margin-left: 25px;
+}
+
+.left-spacer-sm {
+	margin-left: 15px;
+}
+
+.left-spacer-xs {
+	margin-left: 5px;
+}
+
+.dropdown-lg {
+	padding: 10px 16px;
+	font-size: 18px;
+	height: 46px;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.label-has-error {
+	color: #d9534f;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+#main-container {
+	padding: 10px 10px 10px 10px;
+}
+
+@media screen and (min-width: 768px) {
+	#main-container {
+		padding: 10px 10px 25px 25px;
+	}
+}
+
+.page-heading{
+	margin-top: 0px;
+	margin-bottom: 14px;
+	font-size: 25px;
+	font-family: BoosterNextFY-Medium;
+}
+
+/* Set up a default font and some padding to provide breathing room */
+body {
+  font-family: BoosterNextFY-Regular, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media(max-width: 1200px){
+	.table-wrapper {
+		width: auto;
+		overflow-x: auto;
+	}
+}

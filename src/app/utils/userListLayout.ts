@@ -9,24 +9,23 @@ export class UserListLayout implements ILayout {
     private browserNavbarHeight = 96 - 23;
     public Resized: boolean  = false;
     reLayout() {
-        if(jQuery('#ctb-summary-hidhead').length === 0)
-            return;
-
-        let totalHeight = jQuery(window).height();;
-        let navbarHeight = jQuery('#globally-fixed').outerHeight();
-        navbarHeight += jQuery('#global-header-padding').outerHeight();
-        let headHeight = jQuery('#ctb-detail-head').height();
+        
+        let totalHeight = jQuery(window).innerHeight();
+        let headHeight = jQuery('#detail-head').position().top + 130;
         let footerHeight = jQuery('#ctb-summary-footer').height();
-
+        console.log(totalHeight);
+        console.log(jQuery('#detail-head').height());
+        console.log(footerHeight);
+        
+        
+        let divHeight = jQuery('#div-alert').height(); 
         //let height = totalHeight - navbarHeight - headHeight - footerHeight - this.browserNavbarHeight;
-        let height = totalHeight - footerHeight - this.browserNavbarHeight - 30;
-        console.log('totalHeight: ' + totalHeight);
-        console.log('footerHeight: ' + footerHeight);
-        console.log('this.browserNavbarHeight: '+ this.browserNavbarHeight);
+        let height = totalHeight - headHeight - footerHeight;//- this.browserNavbarHeight - 30;
+       
         let oldHeight = jQuery('.ctb-detail').height();
-        console.log(jQuery('#card-view-container').height());
+        
         jQuery('#card-view-container').height(height);
-        console.log(jQuery('#card-view-container').height());
+        
 
         
 

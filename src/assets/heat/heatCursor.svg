@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 18 18"
+   id="HeatCursor"
+   version="1.1"
+   sodipodi:docname="HeatCursor.svg">
+  <g
+    transform="translate(0,0)">
+    <path
+       style="fill:#97d700;stroke:#aaaaaa;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1;stroke-opacity:1"
+       d="m 17,9 a 8,8 0 0 1 -8,8 8,8 0 0 1 -8,-8 8,8 0 0 1 8,-8 8,8 0 0 1 8,8" />
+  </g>
+</svg>

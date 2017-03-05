@@ -1,0 +1,60 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3001343, 2015-03-31T18:26:47-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: BoosterNextFY-Thin by Fontyou
+ * URL: http://www.myfonts.com/fonts/fontyou/booster-next-fy/thin/
+ * 
+ * Webfont: BoosterNextFY-Regular by Fontyou
+ * URL: http://www.myfonts.com/fonts/fontyou/booster-next-fy/regular/
+ * 
+ * Webfont: BoosterNextFY-Medium by Fontyou
+ * URL: http://www.myfonts.com/fonts/fontyou/booster-next-fy/medium/
+ * 
+ * Webfont: BoosterNextFY-Black by Fontyou
+ * URL: http://www.myfonts.com/fonts/fontyou/booster-next-fy/black/
+ * 
+ * Webfont: BoosterNextFY-Light by Fontyou
+ * URL: http://www.myfonts.com/fonts/fontyou/booster-next-fy/light/
+ * 
+ * Webfont: BoosterNextFY-Bold by Fontyou
+ * URL: http://www.myfonts.com/fonts/fontyou/booster-next-fy/bold/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3001343
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright (c) 2013 by FONTYOU. All rights reserved. www.fontyou.com
+ * 
+ * © 2015 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+/*@import url("//hello.myfonts.net/count/2dcbff");*/
+
+  
+
+
+@font-face {font-family: 'BoosterNextFY-Thin';src: url('/fonts/2DCBFF_0_0.eot');src: url('/fonts/2DCBFF_0_0.eot?#iefix') format('embedded-opentype'),url('/fonts/2DCBFF_0_0.woff2') format('woff2'),url('/fonts/2DCBFF_0_0.woff') format('woff'),url('/fonts/2DCBFF_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'BoosterNextFY-Regular';src: url('/fonts/2DCBFF_1_0.eot');src: url('/fonts/2DCBFF_1_0.eot?#iefix') format('embedded-opentype'),url('/fonts/2DCBFF_1_0.woff2') format('woff2'),url('/fonts/2DCBFF_1_0.woff') format('woff'),url('/fonts/2DCBFF_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'BoosterNextFY-Medium';src: url('/fonts/2DCBFF_2_0.eot');src: url('/fonts/2DCBFF_2_0.eot?#iefix') format('embedded-opentype'),url('/fonts/2DCBFF_2_0.woff2') format('woff2'),url('/fonts/2DCBFF_2_0.woff') format('woff'),url('/fonts/2DCBFF_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'BoosterNextFY-Black';src: url('/fonts/2DCBFF_3_0.eot');src: url('/fonts/2DCBFF_3_0.eot?#iefix') format('embedded-opentype'),url('/fonts/2DCBFF_3_0.woff2') format('woff2'),url('/fonts/2DCBFF_3_0.woff') format('woff'),url('/fonts/2DCBFF_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'BoosterNextFY-Light';src: url('/fonts/2DCBFF_4_0.eot');src: url('/fonts/2DCBFF_4_0.eot?#iefix') format('embedded-opentype'),url('/fonts/2DCBFF_4_0.woff2') format('woff2'),url('/fonts/2DCBFF_4_0.woff') format('woff'),url('/fonts/2DCBFF_4_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'BoosterNextFY-Bold';src: url('/fonts/2DCBFF_5_0.eot');src: url('/fonts/2DCBFF_5_0.eot?#iefix') format('embedded-opentype'),url('/fonts/2DCBFF_5_0.woff2') format('woff2'),url('/fonts/2DCBFF_5_0.woff') format('woff'),url('/fonts/2DCBFF_5_0.ttf') format('truetype');}
+ 

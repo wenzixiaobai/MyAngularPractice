@@ -1,0 +1,58 @@
+<div *ngIf="isLoading">
+    Loading...
+</div>
+<div *ngIf="!isLoading">
+    <div *ngIf="milking !== null">
+        <div class="container navbar-fixed-top">
+            <div class="row">
+                <div class="col-xs-4" id="ctb-detail-head">
+                    <h2>Bail</h2>
+                </div>
+                <div class="col-xs-8">
+                    <h2>Cow#</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="height:300px;">
+            <div class="row" *ngFor="let c2b of milking.allocations; let index=index;" [ngClass]="{position: watchingPosition == (index+1)}">
+                <div class="col-xs-4" id="ctb-detail-head">
+                    <h2>{{c2b.bail}}</h2>
+                </div>
+                <div class="col-xs-8">
+                    <h2>{{c2b.animal}}&nbsp;</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ctb-footer table-responsive" id="ctb-summary-footer">
+            <table id="ctb-summary-footer-table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="ctb-fix-column" id="ctb-summary-fixhead">Summary</th>
+                        <th id="ctb-summary-hidhead" nowrap>&nbsp;</th>
+                        <th *ngFor="let c2b of milking.ctbStats">
+                            {{c2b.title}}
+                        </th>
+                        <th *ngFor="let c2b of milking.draftStats">
+                            {{c2b.title}}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ctb-fix-column" id="ctb-summary-fixvalue">{{milking.session}}</td>
+                        <td id="ctb-summary-hidvalue"></td>
+                        <td *ngFor="let c2b of milking.ctbStats">
+                            {{c2b.value}}
+                        </td>
+                        <td *ngFor="let c2b of milking.draftStats">
+                            {{c2b.value}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

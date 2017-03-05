@@ -41,7 +41,7 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
   summaryThWidth: number = 0;
   contendHeight: number = 0;
   milking: MyMilking = null;
-  watchingPosition: number = 2;
+  watchingPosition: number = 12;
   isLoading = true;
   private index: number;
   private userListLayout: UserListLayout;
@@ -80,6 +80,15 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
     item.value = 3;
     this.milking.ctbStats.push(item);
   }
+ 
+  private addAllocation(title: string, value: number, allocatedTime: Date)
+  {
+    let item = new MilkingStatsItem();
+    item.title = 'Cow Count';
+    item.value = 80000;
+    item.value = 80000;
+    this.milking.ctbStats.push(item);
+  }
 
   private ngDraftingStats() {
     this.milking.draftStats = [];
@@ -101,7 +110,7 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
 
   private ngGetHistory() {
     let allocations = [];
-    for (let i = 0; i < 2000; i++) {
+    for (let i = 0; i < 5000; i++) {
       let allocation = new Allocation('Cow' + i, i);
       allocations.push(allocation);
     }
@@ -111,7 +120,6 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
 
   ngOnInit() {
     this.isLoading = false;
-    
   }
 
   ngAfterViewInit() {
@@ -120,7 +128,7 @@ export class UserListComponent implements OnInit, AfterViewInit, AfterViewChecke
   }
 
   ngAfterViewChecked () {
-    
+    console.log('ngAfterContentChecked');
     if(this.userListLayout.Resized === false){
       this.resizeElements();
       console.log('ngAfterContentChecked');
